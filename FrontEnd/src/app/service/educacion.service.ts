@@ -16,8 +16,8 @@ export class EducacionService {
     return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`);
   }
 
-  public addEducacion(educacion: Educacion):Observable<Educacion>{
-    return this.http.post<Educacion>(`${this.apiServerUrl}/educacion/add`, educacion);
+  public addEducacion(educacion: Educacion):Observable<any>{
+    return this.http.post(`${this.apiServerUrl}/educacion/add`, educacion);
   }
 
   public updateEducacion(educacion: Educacion):Observable<Educacion>{

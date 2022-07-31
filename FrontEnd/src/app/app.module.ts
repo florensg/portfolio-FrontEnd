@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,9 @@ import { AcercadeComponent } from './components/acercade/acercade.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { EducacionUpdateComponent } from './components/educacion-update/educacion-update.component';
+import { EducacionAddComponent } from './components/educacion-add/educacion-add.component';
+import { EducacionDeleteComponent } from './components/educacion-delete/educacion-delete.component';
 
 
 @NgModule({
@@ -21,13 +24,17 @@ import { SkillsComponent } from './components/skills/skills.component';
     AcercadeComponent,
     ExperienciaComponent,
     EducacionComponent,
-    SkillsComponent
+    SkillsComponent,
+    EducacionUpdateComponent,
+    EducacionAddComponent,
+    EducacionDeleteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

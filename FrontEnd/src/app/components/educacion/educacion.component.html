@@ -1,9 +1,7 @@
 <div id="main-container">
-    <div class="text-center">
-        <button type="button" class="btn btn-success" (click)="onOpenModal('add')" id="addEducacionModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Educacion</button>
-    </div>
-
-    <div *ngFor="let educa of educacion">
+    
+    <app-educacion-add></app-educacion-add>
+    <div *ngFor="let educa of educaciones">
         <div class="col text-center">
             <button class="btn btn-secondary" (click)="onOpenModal('edit',educa)">
                 Editar
@@ -18,45 +16,6 @@
         {{educa.fechaEdu}}
         <img src={{educa.imagenEdu}} alt="" width="100px">
     </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form #addForm="ngForm" (ngSubmit)="onAddEducacion(addForm)">
-                <div class="form-group">
-                    <label for="tituloEdu">Titulo</label>
-                    <input type="text" ngModel name="tituloEdu" class="form-control" id="tituloEdu" placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="descripcionEdu">Descripcion</label>
-                    <input type="text" ngModel name="descripcionEdu" class="form-control" id="descripcionEdu" placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="fechaEdu">Fecha</label>
-                    <input type="text" ngModel name="fechaEdu" class="form-control" id="fechaEdu" placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="imagenEdu">Imagen</label>
-                    <input type="text" ngModel name="imagenEdu" class="form-control" id="imagenEdu" placeholder="titulo" required="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="add-educacion-form">Cerrar</button>
-                    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" id="add-educacion-form">Agregar</button>
-                </div>
-          </form>
-                
-            
-        </div>
-        
-      </div>
-    </div>
-  </div>
 
-
+    
 </div>
