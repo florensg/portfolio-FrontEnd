@@ -1,1 +1,22 @@
-<p>experiencia works!</p>
+<div id="main-container">
+    <button class="btn btn-primary" routerLink="educacion-add">
+      agregar Educacion
+    </button>
+      <div *ngFor="let experiencia of experiencias; let iControl=index">
+        <div class="col text-center">
+          <button class="btn btn-primary" routerLink="educacion-update/{{experiencia.idEdu}}">
+              Editar
+          </button>
+          
+          <button class="btn btn-danger" (click)="borrarExperiencia(experiencia.idEdu, iControl)">
+            Eliminar
+        </button>
+      </div>
+      
+  
+        {{experiencia.tituloEdu}}
+        {{experiencia.descripcionEdu}}
+        {{experiencia.fechaEdu}}
+        <img src={{experiencia.imagenEdu}} alt="" width="100px">
+      </div>
+  </div>

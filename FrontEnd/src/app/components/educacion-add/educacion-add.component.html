@@ -1,5 +1,5 @@
-<div>
-  <form [formGroup]="formularioDatos" (ngSubmit)="enviarDatos()">
+<div></div>
+            <form [formGroup]="formularioDatos" (ngSubmit)="enviarDatos()">
                 <div class="form-group">
                     <label for="tituloEdu">Titulo</label>
                     <input type="text" class="form-control" formControlName="tituloEdu" id="tituloEdu" name="tituloEdu"  placeholder="titulo" required="">
@@ -21,6 +21,4 @@
                     <button type="submit" class="btn btn-primary" >Agregar</button>
                 </div>
             </form>
-</div>
-            
             <router-outlet></router-outlet>

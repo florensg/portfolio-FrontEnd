@@ -1,40 +1,22 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Editar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agregar Educacion</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form >
-                <div class="form-group">
-                    <label for="tituloEdu">Titulo</label>
-                    <input type="text" class="form-control" formControlName="tituloEdu" id="tituloEdu" name="tituloEdu"  placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="descripcionEdu">Descripcion</label>
-                    <input type="text" class="form-control" formControlName="descripcionEdu" id="descripcionEdu" name="descripcionEdu"  placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="fechaEdu">Fecha</label>
-                    <input type="text"  class="form-control" formControlName="fechaEdu" id="fechaEdu" name="fechaEdu"  placeholder="titulo" required="">
-                </div>
-                <div class="form-group">
-                    <label for="imagenEdu">Imagen</label>
-                    <input type="text"  class="form-control" formControlName="imagenEdu" id="imagenEdu" name="imagenEdu"  placeholder="titulo" required="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cerrar</button>
-                    <button type="submit" class="btn btn-primary" >Agregar</button>
-                </div>
-            </form>
-        </div>
-      </div>
-    </div>
+<form [formGroup]="formu" (ngSubmit)="editarDatos()">
+  <div class="form-group">
+      <label for="tituloEdu">Titulo</label>
+      <input type="text" class="form-control" formControlName="tituloEdu" id="tituloEdu" name="tituloEdu"  placeholder="titulo" required="">
   </div>
+  <div class="form-group">
+      <label for="descripcionEdu">Descripcion</label>
+      <input type="text" class="form-control" formControlName="descripcionEdu" id="descripcionEdu" name="descripcionEdu"  placeholder="titulo" required="">
+  </div>
+  <div class="form-group">
+      <label for="fechaEdu">Fecha</label>
+      <input type="text"  class="form-control" formControlName="fechaEdu" id="fechaEdu" name="fechaEdu"  placeholder="titulo" required="">
+  </div>
+  <div class="form-group">
+      <label for="imagenEdu">Imagen</label>
+      <input type="text"  class="form-control" formControlName="imagenEdu" id="imagenEdu" name="imagenEdu"  placeholder="titulo" required="">
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cerrar</button>
+      <button type="submit" class="btn btn-primary" >Agregar</button>
+  </div>
+</form>

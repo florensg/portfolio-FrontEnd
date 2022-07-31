@@ -13,7 +13,6 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { EducacionUpdateComponent } from './components/educacion-update/educacion-update.component';
 import { EducacionAddComponent } from './components/educacion-add/educacion-add.component';
-import { EducacionDeleteComponent } from './components/educacion-delete/educacion-delete.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 
 
@@ -28,7 +27,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
     SkillsComponent,
     EducacionUpdateComponent,
     EducacionAddComponent,
-    EducacionDeleteComponent,
     InicioComponent,
   ],
   imports: [

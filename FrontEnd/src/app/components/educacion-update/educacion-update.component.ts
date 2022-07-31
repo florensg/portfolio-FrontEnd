@@ -9,18 +9,34 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./educacion-update.component.css']
 })
 export class EducacionUpdateComponent implements OnInit {
-  idEdu:any;
+  formu:FormGroup;
+  id:any;
 
   constructor(
+    public formulario:FormBuilder,
     private educacionServicio:EducacionService,
-    private activeRoute:ActivatedRoute
+    private activeRoute:ActivatedRoute,
+    private ruteador:Router
   ) { 
-    this.idEdu=this.activeRoute.snapshot.paramMap.get('idEdu');
-    console.log(this.idEdu);
-   }
+    this.id=this.activeRoute.snapshot.paramMap.get('id');
+    this.formu=this.formulario.group({
+      idEdu: [this.id],
+      tituloEdu: [''],
+      fechaEdu: [0],
+      descripcionEdu: [''],
+      imagenEdu: ['']
+    })
+
+  }
 
   ngOnInit(): void {
 
+  }
+
+  editarDatos():any{
+    console.log(this.formu.value);
+      this.educacionServicio.updateEducacion(this.formu.value).subscribe();
+      this.ruteador.navigateByUrl('');
   }
 
 }

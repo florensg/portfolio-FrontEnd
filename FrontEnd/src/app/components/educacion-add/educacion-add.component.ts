@@ -24,6 +24,8 @@ export class EducacionAddComponent implements OnInit {
       descripcionEdu: [''],
       imagenEdu: ['']
     })
+
+
   }
 
   ngOnInit(): void {
