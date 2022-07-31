@@ -5,7 +5,7 @@ import { EducacionDeleteComponent } from './components/educacion-delete/educacio
 import { EducacionUpdateComponent } from './components/educacion-update/educacion-update.component';
 
 const routes: Routes = [
-  {path: '',pathMatch:'full',redirectTo:'inicio'},
+  {path: '',pathMatch:'full',redirectTo:''},
   {path:'educacion-add', component:EducacionAddComponent},
   {path:'educacion-delete', component:EducacionDeleteComponent},
   {path:'educacion-update/:id', component:EducacionUpdateComponent},

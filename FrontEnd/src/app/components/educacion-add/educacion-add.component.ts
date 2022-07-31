@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Educacion } from 'src/app/models/educacion';
+import { Router } from '@angular/router';
 import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EducacionAddComponent implements OnInit {
   formularioDatos:FormGroup;
-  public educaciones: Educacion[]=[];
 
 
   constructor(
     public formulario:FormBuilder, 
     private educacionService:EducacionService,
+    private ruteador:Router
     ) {
     this.formularioDatos=this.formulario.group({
       idEdu: [0],
@@ -32,8 +32,7 @@ export class EducacionAddComponent implements OnInit {
   enviarDatos():any{
     console.log(this.formularioDatos.value);
       this.educacionService.addEducacion(this.formularioDatos.value).subscribe();
-      this.formularioDatos.reset();
-      this.educaciones.push();
+      this.ruteador.navigateByUrl('');
   }
 
 }

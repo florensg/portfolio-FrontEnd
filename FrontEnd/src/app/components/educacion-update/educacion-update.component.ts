@@ -12,8 +12,11 @@ export class EducacionUpdateComponent implements OnInit {
   idEdu:any;
 
   constructor(
-    private educacionServicio:EducacionService
+    private educacionServicio:EducacionService,
+    private activeRoute:ActivatedRoute
   ) { 
+    this.idEdu=this.activeRoute.snapshot.paramMap.get('idEdu');
+    console.log(this.idEdu);
    }
 
   ngOnInit(): void {

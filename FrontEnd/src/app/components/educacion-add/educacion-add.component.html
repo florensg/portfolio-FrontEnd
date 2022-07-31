@@ -1,18 +1,5 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Agregar Educacion
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agregar Educacion</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form [formGroup]="formularioDatos" (ngSubmit)="enviarDatos()">
+<div>
+  <form [formGroup]="formularioDatos" (ngSubmit)="enviarDatos()">
                 <div class="form-group">
                     <label for="tituloEdu">Titulo</label>
                     <input type="text" class="form-control" formControlName="tituloEdu" id="tituloEdu" name="tituloEdu"  placeholder="titulo" required="">
@@ -34,7 +21,6 @@
                     <button type="submit" class="btn btn-primary" >Agregar</button>
                 </div>
             </form>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+            
+            <router-outlet></router-outlet>

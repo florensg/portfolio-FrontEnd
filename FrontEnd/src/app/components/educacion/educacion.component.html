@@ -1,11 +1,13 @@
 <div id="main-container">
-    
-    <app-educacion-add></app-educacion-add>
+  <button class="btn btn-primary" routerLink="educacion-add">
+    agregar Educacion
+  </button>
     <div *ngFor="let educa of educaciones; let iControl=index">
       <div class="col text-center">
-        <button class="btn btn-primary" routerLink="educacion-update">
+        <button class="btn btn-primary" routerLink="educacion-update/{{educa.idEdu}}">
             Editar
         </button>
+        
         <button class="btn btn-danger" (click)="borrarEducacion(educa.idEdu, iControl)">
           Eliminar
       </button>
