@@ -1,1 +1,16 @@
-<p>acercade works!</p>
+
+<div class="row" *ngIf="usuario">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <img src={{usuario.fotoPerfil}} class="img-fluid" alt="fotoCV" id="fotoCV">
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <p id="nombre"> {{usuario.nombre}} {{usuario.apellido}} </p>
+        <p>{{usuario.titulo}}</p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <span>
+            <h1>Acerca de mi</h1>
+            {{usuario.descripcion}}
+        </span>
+    </div>
+</div>
