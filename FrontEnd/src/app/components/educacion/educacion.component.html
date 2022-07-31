@@ -1,20 +1,21 @@
 <div id="main-container">
     
     <app-educacion-add></app-educacion-add>
-    <div *ngFor="let educa of educaciones">
-        <div class="col text-center">
-            <button class="btn btn-secondary" (click)="onOpenModal('edit',educa)">
-                Editar
-            </button>
-            <button class="btn btn-secondary" (click)="onOpenModal('delete',educa)">
-                Eliminar
-            </button>
-        </div>
+    <div *ngFor="let educa of educaciones; let iControl=index">
+      <div class="col text-center">
+        <button class="btn btn-primary" routerLink="educacion-update">
+            Editar
+        </button>
+        <button class="btn btn-danger" (click)="borrarEducacion(educa.idEdu, iControl)">
+          Eliminar
+      </button>
+    </div>
+    
 
-        {{educa.tituloEdu}}
-        {{educa.descripcionEdu}}
-        {{educa.fechaEdu}}
-        <img src={{educa.imagenEdu}} alt="" width="100px">
+      {{educa.tituloEdu}}
+      {{educa.descripcionEdu}}
+      {{educa.fechaEdu}}
+      <img src={{educa.imagenEdu}} alt="" width="100px">
     </div>
 
     

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Educacion } from '../models/educacion';
@@ -12,6 +12,8 @@ export class EducacionService {
   
   constructor(private http: HttpClient) { }
 
+  cambio = new EventEmitter<boolean>()
+  
   public getEducacion():Observable<Educacion[]>{
     return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`);
   }
@@ -24,8 +26,8 @@ export class EducacionService {
     return this.http.put<Educacion>(`${this.apiServerUrl}/educacion/update`, educacion);
   }
 
-  public deleteEducacion(educacionId: number):Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/educacion/delete/${educacionId}`);
+  public deleteEducacion(educacionId: number):Observable<any>{
+    return this.http.delete<any>(`${this.apiServerUrl}/educacion/delete/${educacionId}`);
   }
 
 }

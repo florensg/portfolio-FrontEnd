@@ -14,6 +14,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { EducacionUpdateComponent } from './components/educacion-update/educacion-update.component';
 import { EducacionAddComponent } from './components/educacion-add/educacion-add.component';
 import { EducacionDeleteComponent } from './components/educacion-delete/educacion-delete.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 @NgModule({
@@ -28,13 +29,14 @@ import { EducacionDeleteComponent } from './components/educacion-delete/educacio
     EducacionUpdateComponent,
     EducacionAddComponent,
     EducacionDeleteComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

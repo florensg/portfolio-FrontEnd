@@ -24,12 +24,14 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEducacion();
+    
   }
 
     public getEducacion():void{
     this.educacionService.getEducacion().subscribe({
       next:(Response: Educacion[]) => {
         this.educaciones=Response;
+        
       },
       error:(error:HttpErrorResponse)=>{
         alert(error.message);
@@ -37,61 +39,14 @@ export class EducacionComponent implements OnInit {
     })
   }
 
-  public onOpenModal(mode: string, educacion?: Educacion):void{
-    const container = document.getElementById('main-container');
-    const button = document.createElement('button');
-    button.style.display='none';
-    button.setAttribute('data-toggle','modal');
-    if(mode==='add'){
-      button.setAttribute('data-target','#addEducacionModal')
-    }else if(mode === 'delete'){
-      this.deleteEducacion=educacion;
-      button.setAttribute('data-target','#deleteEducacionModal')
-    }else if(mode === 'edit'){
-      this.editEducacion=educacion;
-      button.setAttribute('data-target','#editEducacionModal')
+  borrarEducacion(idEdu:number,iControl:any){
+    console.log(idEdu);
+    if(window.confirm("¿Desea borrar esta informacion?")){
+      this.educacionService.deleteEducacion(idEdu).subscribe((resp)=>{
+        this.educaciones.splice(iControl,1)
+      });
     }
-    container?.appendChild(button);
-    button.click();
-  }
-
-  public onAddEducacion(addForm: NgForm){
-    document.getElementById('add-educacion-form')?.click();
-    this.educacionService.addEducacion(addForm.value).subscribe({
-      next: (response: Educacion) => {
-        console.log(response);
-        this.getEducacion();
-      },
-      error:(error: HttpErrorResponse)=> {
-        alert(error.message)
-      }
-    })
-  }
-
-  public onUpdateEducacion(educacion: Educacion){
-    this.editEducacion = educacion;
-    document.getElementById('add-educacion-form')?.click();
-    this.educacionService.updateEducacion(educacion).subscribe({
-      next: (response: Educacion) => {
-        console.log(response);
-        this.getEducacion();
-      },
-      error:(error: HttpErrorResponse)=> {
-        alert(error.message)
-      }
-    })
-  }
-
-  public onDeleteEducacion(educacionId: number):void{
-    this.educacionService.deleteEducacion(educacionId).subscribe({
-      next: (response: void) => {
-        console.log(response);
-        this.getEducacion();
-      },
-      error:(error: HttpErrorResponse)=> {
-        alert(error.message)
-      }
-    })
+    
   }
 
 }
