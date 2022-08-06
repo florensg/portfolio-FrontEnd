@@ -12,11 +12,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 export class EducacionComponent implements OnInit {
   
   public educaciones: Educacion[]=[];
-  public editEducacion: Educacion | undefined;
-  public deleteEducacion: Educacion | undefined;
   
-
-
   constructor(
     private educacionService: EducacionService
     ) { }

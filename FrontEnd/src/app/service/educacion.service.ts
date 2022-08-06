@@ -12,7 +12,6 @@ export class EducacionService {
   
   constructor(private http: HttpClient) { }
 
-  cambio = new EventEmitter<boolean>()
   
   public getEducacion():Observable<Educacion[]>{
     return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`);

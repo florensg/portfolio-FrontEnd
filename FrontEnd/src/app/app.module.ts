@@ -14,6 +14,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { EducacionUpdateComponent } from './components/educacion-update/educacion-update.component';
 import { EducacionAddComponent } from './components/educacion-add/educacion-add.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ExperienciaAddComponent } from './components/experiencia-add/experiencia-add.component';
+import { ExperienciaUpdateComponent } from './components/experiencia-update/experiencia-update.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     EducacionUpdateComponent,
     EducacionAddComponent,
     InicioComponent,
+    ExperienciaAddComponent,
+    ExperienciaUpdateComponent,
   ],
   imports: [
     BrowserModule,

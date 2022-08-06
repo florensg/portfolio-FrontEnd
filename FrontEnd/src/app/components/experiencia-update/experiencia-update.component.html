@@ -1,0 +1,23 @@
+<form [formGroup]="formu" (ngSubmit)="editarDatos()">
+    <div class="form-group">
+        <label for="tituloExp">Titulo</label>
+        <input type="text" class="form-control" formControlName="tituloExp" id="tituloExp" name="tituloExp"  placeholder="titulo" required="">
+    </div>
+    <div class="form-group">
+        <label for="descripcionExp">Descripcion</label>
+        <input type="text" class="form-control" formControlName="descripcionExp" id="descripcionExp" name="descripcionExp"  placeholder="titulo" required="">
+    </div>
+    <div class="form-group">
+        <label for="fechaExp">Fecha</label>
+        <input type="text"  class="form-control" formControlName="fechaExp" id="fechaExp" name="fechaExp"  placeholder="titulo" required="">
+    </div>
+    <div class="form-group">
+        <label for="imagenExp">Imagen</label>
+        <input type="text"  class="form-control" formControlName="imagenExp" id="imagenExp" name="imagenExp"  placeholder="titulo" required="">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cerrar</button>
+        <button type="submit" class="btn btn-primary" >Agregar</button>
+    </div>
+  </form>
+  
